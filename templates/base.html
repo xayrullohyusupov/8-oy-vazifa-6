@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sayt{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/hero.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <div class="logo">
+                    <a href="{% url 'home' %}">Sayt Logo</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="{% url 'home' %}" class="nav-link">Asosiy Sahifa</a></li>
+                    <li><a href="{% url 'create_quiz' %}" class="nav-link">Quiz Yaratish</a></li>
+                    <li><a href="{% url 'profile' %}" class="nav-link">Profil</a></li>
+                    <li><a href="{% url 'logout' %}" class="nav-link">Chiqish</a></li>
+                </ul>
+                <div class="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Quiz Platformaga Xush Kelibsiz!</h1>
+            <p>Eng qiziqarli testlar va savollar bilan bilimlaringizni sinab ko'ring.</p>
+        </div>
+    </section>
+    <main>
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; {{ current_year }} Sizning Saytingiz. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+    <script src="{% static 'scripts/main.js' %}"></script>
+    <script src="{% static 'scripts/navbar.js' %}"></script>
+</body>
+</html>

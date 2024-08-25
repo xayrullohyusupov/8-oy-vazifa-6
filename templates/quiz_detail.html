@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>{{ quiz.name }}</h2>
+  <p><strong>Muallif:</strong> {{ quiz.author.username }}</p>
+  <p><strong>Savollar soni:</strong> {{ quiz.amount }}</p>
+
+  <h3>Savollar:</h3>
+  <div class="question-list">
+    {% for question in questions %}
+      <div class="question-item">
+        <p>{{ question.name }}</p>
+      </div>
+    {% empty %}
+      <p>Savollar mavjud emas.</p>
+    {% endfor %}
+  </div>
+
+  <a href="{% url 'create_question' quiz.id %}" class="cta-button">Savol Qo'shish</a>
+{% endblock %}

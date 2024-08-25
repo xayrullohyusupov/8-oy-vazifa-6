@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Qidiruv{% endblock %}
+
+{% block content %}
+<div class="search-bar">
+    <input type="text" placeholder="Qidiruv..." id="search-input">
+    <button type="button" onclick="search()">Qidirish</button>
+</div>
+<div id="search-results"></div>
+
+<script>
+function search() {
+    const query = document.getElementById('search-input').value;
+    console.log('Qidiruv: ', query);
+}
+</script>
+{% endblock %}

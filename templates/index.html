@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Bosh Sahifa{% endblock %}
+
+{% block content %}
+  <h1>Xush kelibsiz!</h1>
+  <p>Bu sizning bosh sahifangiz. Saytingizdagi eng so'nggi yangiliklar va ma'lumotlarni shu yerda ko'rsatishingiz mumkin.</p>
+  
+  <section class="quizzes">
+    <h2>Yaratilgan Quizlar</h2>
+    <div class="quiz-list">
+      {% for quiz in quizzes %}
+        <div class="quiz-item">
+          <h3>{{ quiz.name }}</h3>
+          <p><strong>Muallif:</strong> {{ quiz.author.username }}</p>
+          <p><strong>Savollar soni:</strong> {{ quiz.amount }}</p>
+          <a href="{% url 'quiz_detail' quiz.id %}" class="cta-button">Ko'proq ma'lumot</a>
+        </div>
+      {% empty %}
+        <p>Hozircha hech qanday quiz mavjud emas.</p>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}

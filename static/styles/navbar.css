@@ -1,0 +1,34 @@
+.nav-toggle {
+    display: block;
+    cursor: pointer;
+}
+
+.nav-toggle .bar {
+    background: #fff;
+    display: block;
+    height: 3px;
+    width: 25px;
+    margin: 5px auto;
+    transition: 0.3s;
+}
+
+.nav-links {
+    display: none;
+}
+
+.nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background: #333;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    border: 1px solid #444;
+}
+
+.nav-links.active .nav-link {
+    padding: 15px;
+    color: #fff;
+    text-align: center;
+}

@@ -1,0 +1,31 @@
+/* static/styles/profile.css */
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.profile-header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+.profile-info {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.profile-info p {
+    margin: 0 0 10px;
+}
